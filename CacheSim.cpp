@@ -30,11 +30,11 @@ void CacheSim::run() {
 
 // Helper methods
 std::tuple<bool, std::uint64_t, int> parse_line(const std::string& access) {
-    bool type; // 0 is Load, 1 is Store
+    int type; // 0 is Load, 1 is Store
     std::uint64_t address;
     int instructions;
 
-    sscanf(access.c_str(), "# %c %llx %d", &type, &address, &instructions);
+    sscanf(access.c_str(), "# %d %llx %d", &type, &address, &instructions);
 
     return {type, address, instructions};
 }
