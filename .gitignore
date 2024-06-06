@@ -34,3 +34,6 @@
 # CLion project files
 cmake-build-*
 .idea
+
+# Large trace files
+traces/crafty_mem.trace
