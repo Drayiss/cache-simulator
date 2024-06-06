@@ -15,17 +15,9 @@ CacheSim::~CacheSim() {
 void CacheSim::run() {
     std::string line;
 
-    std::ofstream cloneFile;
-    cloneFile.open("traces/clone.gz");
-
     while (std::getline(infile, line)) {
         auto [type, address, instructions] = parse_line(line);
-
-        std::ostringstream oss;
-        oss << "# " << type << " " << std::hex << address << " " << std::dec << instructions << "\n";
-        cloneFile << oss.str();
     }
-    cloneFile.close();
 }
 
 // Helper methods
